@@ -45,19 +45,21 @@ const MoviesPage = () => {
   }
 
   return (
-    <>
+    <div className="movies-section">
       <MoviesForm onSubmit={handleSubmit} />
-      <ul>
+      <ul className="movies-list">
         {status === 'resolved' &&
           films.map(film => {
             return (
-              <li key={film.id}>
-                <Link to={`${film.id}`}>{film.title}</Link>
+              <li key={film.id} className="movies-item">
+                <Link to={`${film.id}`} className="movies-link">
+                  {film.title}
+                </Link>
               </li>
             );
           })}
       </ul>
-    </>
+    </div>
   );
 };
 

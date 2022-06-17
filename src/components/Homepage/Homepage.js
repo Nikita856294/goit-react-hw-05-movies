@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { requestTrendingFilms } from '../../services/API';
 import { Link } from 'react-router-dom';
 import { TailSpin } from 'react-loader-spinner';
-
+import '../../css/Homepage.modules.css';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 const Homepage = () => {
@@ -33,18 +33,20 @@ const Homepage = () => {
   }
   if (status === 'resolved') {
     return (
-      <>
-        <h3>Trending todays</h3>
-        <ul>
+      <div className="home-section">
+        <h3 className="home-title">Trending todays</h3>
+        <ul className="home-list">
           {films.map(film => {
             return (
-              <li key={film.id}>
-                <Link to={`movies/${film.id}`}>{film.title}</Link>
+              <li key={film.id} className="home-item">
+                <Link to={`movies/${film.id}`} className="home-link">
+                  {film.title}
+                </Link>
               </li>
             );
           })}
         </ul>
-      </>
+      </div>
     );
   }
 };

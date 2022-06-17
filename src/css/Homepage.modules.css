@@ -1,0 +1,23 @@
+.home-section {
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.home-title {
+  margin-bottom: 15px;
+}
+.home-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.home-link {
+  display: block;
+  color: black;
+}
+
+.home-link:hover {
+  color: orange;
+}

@@ -1,6 +1,7 @@
 .nav {
   display: flex;
-  padding: 10px 10px;
+  padding: 30px 30px;
+  background-color: #4682b4;
 }
 .nav-list {
   display: flex;
@@ -9,7 +10,7 @@
   margin-right: 10px;
 }
 .nav-link {
-  color: black;
+  color: white;
 }
 .nav-link:hover {
   color: orange;
