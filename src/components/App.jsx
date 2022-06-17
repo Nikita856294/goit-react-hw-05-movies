@@ -4,12 +4,15 @@ import MoviesPage from './MoviesPage';
 import Navigation from './Navigation';
 import MovieDetailsView from './MovieDetailsView';
 import Container from './Container';
+import GlobalStyle from './GlobalStyle';
 import { ToastContainer } from 'react-toastify';
 
 export const App = () => {
   return (
     <>
+      <GlobalStyle />
       <ToastContainer />
+
       <Container>
         <Navigation />
         <Routes>
