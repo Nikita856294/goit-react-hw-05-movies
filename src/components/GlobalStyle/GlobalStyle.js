@@ -30,8 +30,8 @@ body {
   font-family: Roboto, sans-serif;
 }
 a{
-    text-decoration:none;
-}
+    text-decoration: none;
+  }
 *,
 *::before,
 *::after {

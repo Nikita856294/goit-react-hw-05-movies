@@ -1,0 +1,16 @@
+.nav {
+  display: flex;
+  padding: 10px 10px;
+}
+.nav-list {
+  display: flex;
+}
+.nav-item {
+  margin-right: 10px;
+}
+.nav-link {
+  color: black;
+}
+.nav-link:hover {
+  color: orange;
+}
