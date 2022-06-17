@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 
 const MoviesForm = ({ onSubmit }) => {
   const [film, setFilm] = useState('');
+  // eslint-disable-next-line no-unused-vars
   let [searchParams, setSearchParams] = useSearchParams();
   const handleSubmit = e => {
     e.preventDefault();
