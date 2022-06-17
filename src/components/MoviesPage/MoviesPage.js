@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { SearchFilm } from 'services/API';
 import { toast } from 'react-toastify';
 import { TailSpin } from 'react-loader-spinner';
+import '../../css/MoviesPage.modules.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 const MoviesPage = () => {

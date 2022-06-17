@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import '../../css/MoviesForm.modules.css';
 
 const MoviesForm = ({ onSubmit }) => {
   const [film, setFilm] = useState('');
@@ -23,9 +24,11 @@ const MoviesForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form">
       <input onChange={handleChange} />
-      <button type="submit">Search</button>
+      <button type="submit" className="form-button">
+        Search
+      </button>
     </form>
   );
 };

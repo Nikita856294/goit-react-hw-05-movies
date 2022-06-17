@@ -1,0 +1,19 @@
+.movies-section {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.movies-item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.movies-link {
+  display: block;
+  color: black;
+}
+
+.movies-link:hover {
+  color: orange;
+}
