@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { requestMovieDetails } from 'services/API';
 import { Link, Routes, Route } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import Cast from 'components/Cast';
-import Reviews from 'components/Reviews';
 import { TailSpin } from 'react-loader-spinner';
 import ImgPath from 'services/ImgPath';
 import '../../css/MovieDetailsView.modules.css';
+
+const Cast = lazy(() => import('../Cast'));
+const Reviews = lazy(() => import('../Reviews'));
 
 const MovieDetailsView = () => {
   let { movieId } = useParams();
@@ -88,8 +89,22 @@ const MovieDetailsView = () => {
         </div>
       </>
       <Routes>
-        <Route path="/cast" element={<Cast movieId={movieId} />} />
-        <Route path="/reviews" element={<Reviews movieId={movieId} />} />
+        <Route
+          path="/cast"
+          element={
+            <Suspense fallback={<TailSpin />}>
+              <Cast movieId={movieId} />{' '}
+            </Suspense>
+          }
+        />
+        <Route
+          path="/reviews"
+          element={
+            <Suspense fallback={<TailSpin />}>
+              <Reviews movieId={movieId} />
+            </Suspense>
+          }
+        />
       </Routes>
     </>
   );
