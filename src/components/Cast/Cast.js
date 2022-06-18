@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { requestMovieCredits } from 'services/API';
 import { TailSpin } from 'react-loader-spinner';
-
+import '../../css/Cast.modules.css';
 import ImgPath from 'services/ImgPath';
 
 const Cast = ({ movieId }) => {
@@ -32,16 +32,20 @@ const Cast = ({ movieId }) => {
   }
 
   return (
-    <ul>
+    <ul className="cast">
       {status === 'resolved' &&
         actors.map(actor => {
           return (
-            <li key={actor.cast_id}>
+            <li key={actor.cast_id} className="cast-item">
               {actor.profile_path && (
-                <img src={`${ImgPath}${actor.profile_path}`} alt={actor.name} />
+                <img
+                  src={`${ImgPath}${actor.profile_path}`}
+                  alt={actor.name}
+                  className="cast-img"
+                />
               )}
 
-              <p>{actor.original_name}</p>
+              <p className="cast-name">{actor.original_name}</p>
             </li>
           );
         })}

@@ -6,6 +6,7 @@ import Cast from 'components/Cast';
 import Reviews from 'components/Reviews';
 import { TailSpin } from 'react-loader-spinner';
 import ImgPath from 'services/ImgPath';
+import '../../css/MovieDetailsView.modules.css';
 
 const MovieDetailsView = () => {
   let { movieId } = useParams();
@@ -38,28 +39,46 @@ const MovieDetailsView = () => {
   return (
     <>
       <>
-        <div>
+        <div className="movie-section">
           {movie.poster_path && (
-            <img src={`${ImgPath}${movie.poster_path}`} alt={movie.overview} />
+            <img
+              src={`${ImgPath}${movie.poster_path}`}
+              alt={movie.overview}
+              width="200"
+              height="100"
+              className="movie-img"
+            />
           )}
-          <h2>{movie.title}</h2>
-          <p>{new Date(movie.release_date).getFullYear().toString()}</p>
-          <p>Use Score:{Math.round(movie.popularity)}%</p>
-          <h3>Overview</h3>
-          <p>{movie.overview}</p>
-          <h3>Genres</h3>
-          <ul>
+          <div className="movie-date">
+            <h2 className="movie-title">
+              {movie.title}
+              <p className="movie-release">
+                ({new Date(movie.release_date).getFullYear().toString()})
+              </p>
+            </h2>
+          </div>
+          <p className="movie-popularity">
+            Use Score:{Math.round(movie.popularity)}%
+          </p>
+          <h3 className="overview-title">Overview</h3>
+          <p className="overview-text">{movie.overview}</p>
+          <h3 className="genres">Genres</h3>
+          <ul className="genres-list">
             {movie.genres &&
               movie.genres.map(genre => {
-                return <li key={genre.id}>{genre.name}</li>;
+                return (
+                  <li key={genre.id} className="genres-item">
+                    {genre.name}
+                  </li>
+                );
               })}
           </ul>
         </div>
-
-        <div>
-          <h4>Additional information</h4>
-          <ul>
-            <li>
+        <div className="line"> </div>
+        <div className="additional">
+          <h4 className="additional-title">Additional information</h4>
+          <ul className="additional-list">
+            <li className="additional-item">
               <Link to="cast">Cast</Link>
             </li>
             <li>

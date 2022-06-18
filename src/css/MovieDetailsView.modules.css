@@ -1,0 +1,54 @@
+.movie-section {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.movie-img {
+  width: 400px;
+  height: 200px;
+}
+
+.movie-title {
+  display: flex;
+  margin-top: 10px;
+
+  align-items: center;
+}
+
+.movie-release {
+  margin-left: 10px;
+}
+
+.movie-popularity {
+  margin-top: 10px;
+}
+
+.overview-title {
+  margin-top: 10px;
+}
+
+.overview-text {
+  margin-top: 10px;
+}
+
+.genres {
+  margin-top: 10px;
+}
+
+.genres-list {
+  margin-top: 10px;
+}
+
+.additional {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.additional-list {
+  margin-top: 10px;
+}
+
+.additional-item:not(:last-child) {
+  margin-bottom: 5px;
+}

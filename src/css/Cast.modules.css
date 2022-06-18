@@ -1,0 +1,8 @@
+.cast {
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.cast-item {
+  margin-right: 5px;
+}
