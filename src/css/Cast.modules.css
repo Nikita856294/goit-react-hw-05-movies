@@ -1,8 +1,13 @@
 .cast {
   padding-top: 10px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 .cast-item {
-  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.cast-img {
+  width: 400px;
+  height: 400px;
 }

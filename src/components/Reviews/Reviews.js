@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { requestReviews } from 'services/API';
 import { TailSpin } from 'react-loader-spinner';
+import '../../css/Reviews.modules.css';
 
 const Reviews = ({ movieId }) => {
   const [reviews, setReviews] = useState([]);
@@ -32,12 +33,12 @@ const Reviews = ({ movieId }) => {
   }
 
   return (
-    <ul>
+    <ul className="reviews">
       {status === 'resolved' &&
         reviews.map(review => {
           return (
-            <li key={review.id}>
-              <h3>Author:{review.author}</h3>
+            <li key={review.id} className="reviews-title">
+              <h3 className="reviews-title">Author:{review.author}</h3>
               <p>{review.content}</p>
             </li>
           );
